@@ -1,5 +1,7 @@
 package _01_introduction_to_encapsulation;
 
+import com.sun.org.apache.bcel.internal.generic.Type;
+
 /*
  * Encapsulation is a way of protecting the data in a class from being
  * unintentionally altered from another class.
@@ -23,10 +25,60 @@ public class EncapsulateTheData {
 	//2. Create a new JUnit Test case and write tests to verify that 
 	//   the member variables' getters and setters are working
 	
-	int itemsReceived; //must not be negative. All negative arguments get set to 0.
-	float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
-	String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
-	Object memberObj;  //must not be a String.  If it is a String, set it equal to a new Object();
+	protected int itemsReceived; //must not be negative. All negative arguments get set to 0.
+	
+	public int getItemsReceived() {
+		return itemsReceived;
+	}
+	
+	public void setItemsReceived(int newAmount) { 
+		if(newAmount >= 0) {
+		itemsReceived = newAmount;
+		}
+		else {
+			itemsReceived = 0;
+		}
+	}
+	
+	protected float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
+	
+	public float getDegreesTurned() {
+		return degreesTurned;
+	}
+	
+	public void setDegreesTurned(float newAmount) {
+		if(newAmount <= 360.00 && newAmount >= 0.0) {
+			degreesTurned = newAmount;
+		}
+	}
+	
+	protected String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
+	
+	public String getNomenclature() {
+		return nomenclature;
+	}
+	
+	public void setNomenclature(String newAmount) {
+		if(newAmount.isEmpty()) {
+			nomenclature = " ";
+		}
+		else {
+		nomenclature = newAmount;
+		}
+	}
+	
+	protected Object memberObj;  //must not be a String.  If it is a String, set it equal to a new Object();
+	
+	@SuppressWarnings("unlikely-arg-type")
+	public void setMemberObj(Object newObject) {
+		if(!newObject.getClass().equals(Type.STRING)) {
+			memberObj = newObject;
+		}
+	}
+	
+	public Object getMemberObj() {
+		return memberObj;
+	}
 	
 	public static void main(String[] args) {
 		

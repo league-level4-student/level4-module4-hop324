@@ -10,7 +10,18 @@ public abstract class Polymorph {
    	 this.x = x;
    	 this.y = y;
     }
-    
+    public void setX(int setter) {
+    	x = setter;
+    }
+    public int getX() {
+    	return x;
+    }
+    public void setY(int setter) {
+    	y = setter;
+    }
+    public int getY() {
+    	return y;
+    }
     public void update(){
    	 
     }

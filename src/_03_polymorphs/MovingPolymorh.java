@@ -5,6 +5,7 @@ import java.awt.Graphics;
 
 public class MovingPolymorh  extends Polymorph{
 
+	Graphics aww;
 	MovingPolymorh(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
@@ -31,12 +32,21 @@ public class MovingPolymorh  extends Polymorph{
 		public void draw(Graphics g) {
 			g.setColor(Color.black);
 			g.fillRect(x, y, 50, 50);
+			System.out.println(x + " " + y);
 			
 		}
+		
+		public void redraw(Graphics g) {
+			System.out.println("Potatoes");
+			g.setColor(Color.lightGray);
+			g.fillRect(x, y, 50, 50);
+			g.setColor(Color.black);
+			g.fillRect(x+counter,y+counter, 50, 50);
+			System.out.println("Haha: "+ x + " " + y);
+		}
+		
 		public int counter = 10;
-		public void update(Graphics g) {
-			g.setColor(Color.white);
-			g.fillRect(x+counter, y+counter, 50, 50);
+		public void update() {
 		}
 
 }

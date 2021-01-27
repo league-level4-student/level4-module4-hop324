@@ -7,7 +7,7 @@ import java.awt.Graphics;
 public class RedPolymorph extends Polymorph{
 	public int width = 1000;
 	public int height = 800;
-		RedPolymorph(int x, int y) AC{
+		RedPolymorph(int x, int y){
 			super(x, y);
 		}
 		

@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class PolymorphWindow extends JPanel implements MouseListener{
+public class PolymorphWindow extends JPanel implements ActionListener{
     public static final int WIDTH = 900;
     public static final int HEIGHT = 600;
     
@@ -34,21 +34,23 @@ public class PolymorphWindow extends JPanel implements MouseListener{
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
    	 window.setVisible(true);
-   	 window.addMouseListener(this);
+   //	 window.addMouseListener(this);
    	 
 
    	 
    	 Polymorph bluePoly = new BluePolymorph(50, 50);
    	 Polymorph redPoly = new RedPolymorph(100, 100);
    	 Polymorph movePoly = new MovingPolymorh(200, 200);
+   	 Polymorph circlePoly = new CirclePolymorph(75, 75);
    	 
    	 
    	 
    	 
-   	 array.add(bluePoly); array.add(movePoly); array.add(redPoly);
+   	 array.add(bluePoly); array.add(movePoly); array.add(redPoly); array.add(circlePoly);
    	 
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
+   	 
     // 		 bluePoly.update();
     }
     
@@ -68,46 +70,13 @@ public class PolymorphWindow extends JPanel implements MouseListener{
    	 }
     }
 
-  /*  @Override
+    @Override
     public void actionPerformed(ActionEvent e) {
-    	
+    	 for(int i = 0; i< array.size(); i++) {
+       		 array.get(i).update();
+       	   	repaint();
+       	 }
     }
-*/
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		public void paintComponent1(Graphics g){
-		    //draw background
-		   	 g.setColor(Color.LIGHT_GRAY);
-		   	 g.fillRect(0, 0, 500, 500);
-		   	 
-		   	 for(int i = 0; i< array.size(); i++) {
-		   		 array.get(i).update();
-		   	   	repaint();
-		   	 }
-	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

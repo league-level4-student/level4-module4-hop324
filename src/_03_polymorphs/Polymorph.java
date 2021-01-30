@@ -3,23 +3,23 @@ package _03_polymorphs;
 import java.awt.Graphics;
 
 public abstract class Polymorph {
-    int x;
-    int y;
+    double x;
+    double y;
     
     Polymorph(int x, int y){
    	 this.x = x;
    	 this.y = y;
     }
-    public void setX(int setter) {
-    	x = setter;
+    public void setX(double d) {
+    	x = d;
     }
-    public int getX() {
+    public double getX() {
     	return x;
     }
-    public void setY(int setter) {
+    public void setY(double setter) {
     	y = setter;
     }
-    public int getY() {
+    public double getY() {
     	return y;
     }
     public void update(){

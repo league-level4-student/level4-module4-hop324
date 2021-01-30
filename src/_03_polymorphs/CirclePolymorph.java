@@ -28,13 +28,15 @@ public class CirclePolymorph extends Polymorph{
 
 		@Override
 		public void draw(Graphics g) {
-			g.setColor(Color.black);
-			g.fillRect(x, y, 50, 50);
+			g.setColor(Color.orange);
+			g.fillRect((int)x, (int)y, 25, 25);
 			
 		}
 		
-		public void update(Graphics g) {
-			
+		public void update() {
+			System.out.println("is this working");
+			setX(x+Math.cos(75)*10);
+			setY(y+Math.sin(130)*10);
 		}
 		
 	}

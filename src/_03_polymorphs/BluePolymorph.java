@@ -27,10 +27,10 @@ public int height = 800;
 
 	@Override
 	public void draw(Graphics g) {
-		setWidth(x);
-		setHeight(y);
+		setWidth((int) x);
+		setHeight((int) y);
 		g.setColor(Color.blue);
-		g.fillRect(x, y, 50, 50);
+		g.fillRect((int)x, (int)y, 50, 50);
 		
 	}
 	

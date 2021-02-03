@@ -17,7 +17,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     public static final int WIDTH = 900;
     public static final int HEIGHT = 600;
     
-    private JFrame window;
+    JFrame window;
     private Timer timer;
     
     
@@ -41,12 +41,14 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 Polymorph bluePoly = new BluePolymorph(50, 50);
    	 Polymorph redPoly = new RedPolymorph(100, 100);
    	 Polymorph movePoly = new MovingPolymorh(200, 200);
-   	 Polymorph circlePoly = new CirclePolymorph(75, 75);
+   	 Polymorph circlePoly = new CirclePolymorph(250, 250);
+   	 Polymorph mousePoly = new MousePolymorph(10, 10);
+   	 Polymorph imagePoly = new ImagePolymorph(300, 300);
+   	 Polymorph buttonPoly = new ButtonPolymorph(300, 100);
    	 
    	 
    	 
-   	 
-   	 array.add(bluePoly); array.add(movePoly); array.add(redPoly); array.add(circlePoly);
+   	 array.add(bluePoly); array.add(movePoly); array.add(redPoly); array.add(circlePoly); array.add(mousePoly); array.add(imagePoly); array.add(buttonPoly);
    	 
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();

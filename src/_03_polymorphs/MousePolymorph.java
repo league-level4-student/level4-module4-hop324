@@ -2,13 +2,14 @@ package _03_polymorphs;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.MouseInfo;
+import java.awt.Point;
 
 
-public class CirclePolymorph extends Polymorph{
+public class MousePolymorph extends Polymorph{
 	public int width = 1000;
 	public int height = 800;
-	public double angle = 0.0;
-		CirclePolymorph(int x, int y) {
+		MousePolymorph(int x, int y){
 			super(x, y);
 		}
 		
@@ -29,16 +30,15 @@ public class CirclePolymorph extends Polymorph{
 
 		@Override
 		public void draw(Graphics g) {
-			g.setColor(Color.orange);
-			g.fillRect((int)x, (int)y, 25, 25);
+			g.setColor(Color.magenta);
+			g.fillRect((int)x, (int)y, 50, 50);
 			
 		}
 		
 		public void update() {
-			System.out.println("is this working");
-			angle+=5.0;
-			setX(x+Math.cos(angle)*50);
-			setY(y+Math.sin(angle)*50);
+			Point p = MouseInfo.getPointerInfo().getLocation();
+			setX(p.x);
+			setY(p.y);
 		}
 		
 	}

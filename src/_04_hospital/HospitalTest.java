@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import java.security.DigestException;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -92,14 +93,22 @@ public class HospitalTest extends TestCase {
 		} catch (DoctorFullException dfe) {
 			assertTrue(true);
 		}
-assertTrue(testDoctor.getPatients().size() == 3);
 	}
-
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
-
+		Doctor testDoctor1 = new Doctor();
+		testHospital.addDoctor(testDoctor1);
+		Doctor testDoctor2 = new Doctor();
+		testHospital.addDoctor(testDoctor2);
+		Doctor testDoctor3 = new Doctor();
+		testHospital.addDoctor(testDoctor3);
 		// TODO: add 8 patients to hospital
-
+		Patient andrew = new Patient();
+		Patient andie = new Patient();
+		Patient andrea = new Patient();
+		Patient annie = new Patient();
+		Patient anica = new Patient();
+		Patient anthony = new Patient();
 		// hospital assigns patients to doctors
 		testHospital.assignPatientsToDoctors();
 		// hospital.getDoctors shows doctors have 3, 3, 2 patients

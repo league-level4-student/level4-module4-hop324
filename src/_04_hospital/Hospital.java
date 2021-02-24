@@ -15,7 +15,7 @@ public class Hospital {
 	
 	public void addPatient(Patient patient){
 		patients.add(patient);
-		System.out.println("patient added lol");
+		System.out.println("patient added to hospital");
 	}
 	
 	public ArrayList<Patient> getPatients(){

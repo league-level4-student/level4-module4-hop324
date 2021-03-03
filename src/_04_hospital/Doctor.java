@@ -15,14 +15,14 @@ public class Doctor {
 	}
 
 	public void assignPatient(Patient patient) throws DoctorFullException {
-		System.out.println("Is this working");
+		//System.out.println("Is this working");
 		if (doctorPatients.size() < 3) {
 			doctorPatients.add(patient);
 		}
 		else {
 			throw new DoctorFullException();
 		}
-		System.out.println("New patient added");
+		//System.out.println("New patient added");
 	}
 	
 	public ArrayList<Patient> getPatients() {
